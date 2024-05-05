@@ -1,0 +1,20 @@
+a = int(input())
+arry = []
+for i in range(0,a):
+    arry.append(int(input()))
+
+def sorted(data):
+    n = len(data)
+    for i in range(0,n-1):
+        minidx = i
+        for k in range(i+1, n):
+            if data[minidx] > data[k]:
+                minidx = k
+        tmp = data[i]
+        data[i] = data[minidx]
+        data[minidx] = tmp
+    return data
+
+sorted(arry)
+for idx in range(0,len(arry)):
+    print(arry[idx])
